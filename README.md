@@ -19,7 +19,13 @@ If you feel okay with translating quite alone, you can fork the repo, post a com
 
 And thank you in advance ;)
 
-# Contribution guidelines
+# Developers
+
+Help improve our software! We welcome contributions from everyone, whether to add new features, improve speed, fix existing bugs or add support.
+
+Any code contributions are welcomed as long as they are discussed in [Github Issues](https://github.com/RentadroneCL/Web-API/issues) with maintainers. Be aware that if you decide to change something and submit a PR on your own, it may not be accepted.
+
+## Contribution guidelines
 
 **If you want to contribute to Rentadrone.cl, be sure to review the
 [contribution guidelines](CONTRIBUTING.md). This project adheres to Contributor Covenant's
@@ -31,6 +37,10 @@ tracking requests and bugs, please see
 
 for general questions and discussion, and please direct specific questions to the team of
 [Rentadrone.cl](mailto:contacto@rentadrone.cl).**
+
+## Creating an issue
+
+You can open a new issue based on code from an existing pull request. For more information, see [the template for filling issues](https://github.com/RentadroneCL/rentadronecl.github.io/blob/master/.github/ISSUE_TEMPLATE/feature_request.md)
 
 # [Code of Conduct](https://github.com/RentadroneCL/droneraising/blob/master/CODE_OF_CONDUCT.md)
 
