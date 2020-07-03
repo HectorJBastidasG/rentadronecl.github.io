@@ -5,7 +5,7 @@
 
 The official documentation site
 
-This site is built with [docusaurus 🦖](https://docusaurus.io). Site content is written in Markdown format located in docs.
+This site is built with [docusaurus 🦖](https://docusaurus.io). Site content is written in Markdown format located in `./docs`.
 
 Pull requests welcome!
 
