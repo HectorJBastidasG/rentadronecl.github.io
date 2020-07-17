@@ -1,0 +1,98 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Developers · Rentadrone.cl</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="Help improve our software! We welcome contributions from everyone, whether to add new features, improve speed, fix existing bugs or add support. [Check our code of conduct](/docs/code_of_conduct), [the contributing guidelines](/docs/contributing) and how decisions are made."/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Developers · Rentadrone.cl"/><meta property="og:type" content="website"/><meta property="og:url" content="https://rentadronecl.github.io/"/><meta property="og:description" content="Help improve our software! We welcome contributions from everyone, whether to add new features, improve speed, fix existing bugs or add support. [Check our code of conduct](/docs/code_of_conduct), [the contributing guidelines](/docs/contributing) and how decisions are made."/><meta property="og:image" content="https://rentadronecl.github.io/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://rentadronecl.github.io/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/img/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/helices.png" alt="Rentadrone.cl"/><h2 class="headerTitleWithLogo">Rentadrone.cl</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive siteNavItemActive"><a href="/docs/developers" target="_self">Docs</a></li><li class=""><a href="/help" target="_self">Help</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Developers</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Developers</h3><ul class=""><li class="navListItem navListItemActive"><a class="navItem" href="/docs/developers">Developers</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Detection Models</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/detection_models">Models</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Models Deployment</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/deployment">Models Deployment</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Contributing Guidelines</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/contributing">Contributing guidelines</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Code of Conduct</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/code_of_conduct">Code of Conduct</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Developers</h1></header><article><div><span><p>Help improve our software! We welcome contributions from everyone, whether to add new features, improve speed, fix existing bugs or add support. <a href="/docs/code_of_conduct">Check our code of conduct</a>, <a href="/docs/contributing">the contributing guidelines</a> and how decisions are made.</p>
+<p>Any code contributions are welcomed as long as they are discussed in <a href="https://github.com/RentadroneCL/Web-API/issues">Github Issues</a> with maintainers. Be aware that if you decide to change something and submit a PR on your own, it may not be accepted.</p>
+<h2><a class="anchor" aria-hidden="true" id="contributing"></a><a href="#contributing" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Contributing</h2>
+<p>We use a combination of GitFlow and Forking Workflow.</p>
+<h3><a class="anchor" aria-hidden="true" id="steps"></a><a href="#steps" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Steps</h3>
+<ol>
+<li>Fork the repository.</li>
+<li>Create a branch depending on the issue that you are working on. See branch reference list bellow.</li>
+<li>Do your work and commit.</li>
+<li>Create a Pull Request to the development branch.</li>
+</ol>
+<h3><a class="anchor" aria-hidden="true" id="branch-reference-list"></a><a href="#branch-reference-list" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Branch reference list</h3>
+<ul>
+<li><code>feature/{name}</code> - New functionality or refactoring.</li>
+<li><code>bugfix/{name}</code> - Fixes existing code.</li>
+<li><code>hotfix/{name}</code> - Urgent production fix.</li>
+<li><code>support/{name}</code> - Documentation updates.</li>
+</ul>
+<p>Replace <code>{name}</code> with the name that best describes what your PR is about.</p>
+<h2><a class="anchor" aria-hidden="true" id="creating-an-issue"></a><a href="#creating-an-issue" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Creating an issue</h2>
+<p>To encourage active collaboration, we strongly encourages pull requests, not just bug reports. &quot;Bug reports&quot; may also be sent in the form of a pull request containing a failing test.</p>
+<p>However, if you file a bug report, your issue should contain a title and a clear description of the issue. You should also include as much relevant information as possible and a code sample that demonstrates the issue. The goal of a bug report is to make it easy for yourself - and others - to replicate the bug and develop a fix.</p>
+<p><strong>Suggest an idea for this project</strong></p>
+<p><strong>Is your feature request related to a problem? Please describe.</strong>
+A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]</p>
+<p><strong>Describe the solution you'd like</strong>
+A clear and concise description of what you want to happen.</p>
+<p><strong>Describe alternatives you've considered</strong>
+A clear and concise description of any alternative solutions or features you've considered.</p>
+<p><strong>Additional context</strong>
+Add any other context or screenshots about the feature request here.</p>
+<p><strong>Create a report to help us improve</strong></p>
+<p><strong>Is your feature request related to a problem? Please describe.</strong>
+A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]</p>
+<p><strong>Describe the solution you'd like</strong>
+A clear and concise description of what you want to happen.</p>
+<p><strong>Describe alternatives you've considered</strong>
+A clear and concise description of any alternative solutions or features you've considered.</p>
+<p><strong>Additional context</strong>
+Add any other context or screenshots about the feature request here.</p>
+<p>Remember, bug reports are created in the hope that others with the same problem will be able to collaborate with you on solving it. Do not expect that the bug report will automatically see any activity or that others will jump to fix it. Creating a bug report serves to help yourself and others start on the path of fixing the problem. If you want to chip in, you can help out by fixing any bugs listed in our <a href="https://docs.github.com/en/enterprise/2.15/user/articles/creating-an-issue">issue trackers</a>.</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-next button" href="/docs/detection_models"><span>Models</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#contributing">Contributing</a><ul class="toc-headings"><li><a href="#steps">Steps</a></li><li><a href="#branch-reference-list">Branch reference list</a></li></ul></li><li><a href="#creating-an-issue">Creating an issue</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/favicon.ico" alt="Rentadrone.cl" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/en/developers">Getting Started</a></div><div><h5>Community</h5><a href="https://stackoverflow.com/questions/tagged/" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://discordapp.com/">Project Chat</a><a href="https://twitter.com/" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="https://github.com/RentadroneCL">GitHub</a></div></section><section class="copyright">Copyright © 2020 rentadrone.cl</section></footer></div></body></html>

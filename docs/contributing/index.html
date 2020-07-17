@@ -1,0 +1,91 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Contributing guidelines · Rentadrone.cl</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="How to become a contributor and submit your own code"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Contributing guidelines · Rentadrone.cl"/><meta property="og:type" content="website"/><meta property="og:url" content="https://rentadronecl.github.io/"/><meta property="og:description" content="How to become a contributor and submit your own code"/><meta property="og:image" content="https://rentadronecl.github.io/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://rentadronecl.github.io/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/img/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/helices.png" alt="Rentadrone.cl"/><h2 class="headerTitleWithLogo">Rentadrone.cl</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/developers" target="_self">Docs</a></li><li class=""><a href="/help" target="_self">Help</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Contributing Guidelines</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Developers</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/developers">Developers</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Detection Models</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/detection_models">Models</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Models Deployment</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/deployment">Models Deployment</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Contributing Guidelines</h3><ul class=""><li class="navListItem navListItemActive"><a class="navItem" href="/docs/contributing">Contributing guidelines</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Code of Conduct</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/code_of_conduct">Code of Conduct</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Contributing guidelines</h1></header><article><div><span><p>How to become a contributor and submit your own code</p>
+<h3><a class="anchor" aria-hidden="true" id="contributor-license-agreements"></a><a href="#contributor-license-agreements" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Contributor License Agreements</h3>
+<p>We'd love to accept your patches!</p>
+<h2><a class="anchor" aria-hidden="true" id="contributing-code"></a><a href="#contributing-code" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Contributing code</h2>
+<p>If you have improvements to this project, send us your pull requests! For those
+just getting started, Github has a
+<a href="https://help.github.com/articles/using-pull-requests/">how to</a>.</p>
+<p>Rentadrone.cl team members will be assigned to review your pull requests. Once the
+pull requests are approved and pass continuous integration checks, a Rentadrone.cl
+team member will apply <code>ready to pull</code> label to your change. This means we are
+working on getting your pull request submitted to our internal repository. After
+the change has been submitted internally, your pull request will be merged
+automatically on GitHub.</p>
+<p>If you want to contribute, start working through the project codebase,
+navigate to the
+<a href="https://docs.github.com/en/enterprise/2.15/user/articles/creating-an-issue">Github &quot;issues&quot; tab</a> and start
+looking through interesting issues.</p>
+<p>These are issues that we believe are particularly well suited for outside
+contributions, often because we probably won't get to them right now. If you
+decide to start on an issue, leave a comment so that other people know that
+you're working on it. If you want to help out, but not alone, use the issue
+comment thread to coordinate.</p>
+<h2><a class="anchor" aria-hidden="true" id="pull-request-checklist"></a><a href="#pull-request-checklist" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Pull Request Checklist</h2>
+<p>Before sending your pull requests, make sure you followed this list.</p>
+<ul>
+<li>Read <a href="/docs/contributing">contributing guidelines</a>.</li>
+<li>Read <a href="/docs/code_of_conduct">Code of Conduct</a>.</li>
+<li><strong>In Tests We Trust!</strong> Add tests, your patch won't be accepted if it doesn't have tests.</li>
+<li><strong>Document any change in behaviour.</strong> Make sure the <code>README.md</code> and any other relevant documentation are kept up-to-date.</li>
+<li><strong>Consider our release cycle.</strong> We try to follow <a href="http://semver.org/">SemVer v2.0.0</a>. Randomly breaking public APIs is not an option.</li>
+<li><strong>Create feature branches.</strong> Don't ask us to pull from your master branch.</li>
+<li><strong>One pull request per feature.</strong> If you want to do more than one thing, send multiple pull requests.</li>
+<li><strong>Send coherent history.</strong> Make sure each individual commit in your pull request is meaningful. If you had to make multiple intermediate commits while developing, please <a href="http://www.git-scm.com/book/en/v2/Git-Tools-Rewriting-History#Changing-Multiple-Commit-Messages">squash them</a> before submitting.</li>
+</ul>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/deployment"><span class="arrow-prev">← </span><span>Models Deployment</span></a><a class="docs-next button" href="/docs/code_of_conduct"><span>Code of Conduct</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#contributing-code">Contributing code</a></li><li><a href="#pull-request-checklist">Pull Request Checklist</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/favicon.ico" alt="Rentadrone.cl" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/en/developers">Getting Started</a></div><div><h5>Community</h5><a href="https://stackoverflow.com/questions/tagged/" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://discordapp.com/">Project Chat</a><a href="https://twitter.com/" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="https://github.com/RentadroneCL">GitHub</a></div></section><section class="copyright">Copyright © 2020 rentadrone.cl</section></footer></div></body></html>
