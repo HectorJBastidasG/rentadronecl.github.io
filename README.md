@@ -13,6 +13,10 @@ Pull requests welcome!
 
 See the [Docs Writing Guide](WRITING_GUIDE.md) for our rules and recommendations on writing and maintaining documentation.
 
+## Forum
+
+This project is part of the [UNICEF Innovation Fund Discourse community](https://unicef-if.discourse.group/c/projects/rentadrone/10). You can post comments or questions about each category of [Rentadrone Developers](https://rentadrone.cl/developers/) algorithms. We encourage users to participate in the forum and to engage with fellow users.
+
 # Want to help with the translation?
 
 If you feel okay with translating quite alone, you can fork the repo, post a comment on the [issues tracking](https://github.com/RentadroneCL/rentadronecl.github.io/issues) page to inform others that you're doing the translation and go for it.
