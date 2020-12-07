@@ -1,0 +1,184 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Precision Agriculture · Rentadrone.cl</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="Remote sensing has as one of its objectives, to be able to provide useful information in the shortest possible time for decision-making. Therefore, it is considered a fundamental tool in precision agriculture, since it allows the monitoring of crops throughout the growing season, providing timely information as a diagnostic evaluation. This task must identify the factor that operates in a restrictive manner and decide, in a timely manner, on corrective agronomic intervention."/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Precision Agriculture · Rentadrone.cl"/><meta property="og:type" content="website"/><meta property="og:url" content="https://rentadronecl.github.io/"/><meta property="og:description" content="Remote sensing has as one of its objectives, to be able to provide useful information in the shortest possible time for decision-making. Therefore, it is considered a fundamental tool in precision agriculture, since it allows the monitoring of crops throughout the growing season, providing timely information as a diagnostic evaluation. This task must identify the factor that operates in a restrictive manner and decide, in a timely manner, on corrective agronomic intervention."/><meta property="og:image" content="https://rentadronecl.github.io/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://rentadronecl.github.io/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/img/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/helices.png" alt="Rentadrone.cl"/><h2 class="headerTitleWithLogo">Rentadrone.cl</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/developers" target="_self">Docs</a></li><li class=""><a href="/help" target="_self">Help</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Detection Models</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Developers</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/developers">Developers</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Detection Models</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/detection_models">Photovoltaic Fault Detector</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/precision_agriculture">Precision Agriculture</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Models Deployment</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/deployment">Models Deployment</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Contributing Guidelines</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/contributing">Contributing guidelines</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Code of Conduct</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/code_of_conduct">Code of Conduct</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Precision Agriculture</h1></header><article><div><span><p>Remote sensing has as one of its objectives, to be able to provide useful information in the shortest possible time for decision-making. Therefore, it is considered a fundamental tool in precision agriculture, since it allows the monitoring of crops throughout the growing season, providing timely information as a diagnostic evaluation. This task must identify the factor that operates in a restrictive manner and decide, in a timely manner, on corrective agronomic intervention.</p>
+<p>A promising approach to this is one that integrates data derived from temporal, mosaic, multispectral, and thermal imaging. Both processes allow us to obtain products such as: Thermal maps and Normalized vegetation index maps; These products allow us to identify stress zones which serve as support in agricultural management tasks.</p>
+<p>That is why our objective is to develop an Open Source platform, distributed on a GitHub platform that is capable of generating diagnostic tools or early warning of water stress, health status (attack by pests or diseases), phenological status, nutritional deficiencies, productivity. and performance, among others; by capturing the variations in the reflectivity of the plants during the different growth stages, through the processing of images taken with UAV.</p>
+<h2><a class="anchor" aria-hidden="true" id="quickstart"></a><a href="#quickstart" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Quickstart</h2>
+<blockquote>
+<p>This installation method corresponds to Debian based systems, you must find the proper libs and requirements based on your distro base that can be different.</p>
+</blockquote>
+<h3><a class="anchor" aria-hidden="true" id="before-you-begin-python-36"></a><a href="#before-you-begin-python-36" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Before You Begin: Python 3.6</h3>
+<p>If you are installing the GDAL/OGR packages into a virtual environment based on Python 3.6, you may need to install the python3.6-dev package.</p>
+<pre><code class="hljs css language-bash">sudo apt-get install python3.6-dev
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="install-gdalogr"></a><a href="#install-gdalogr" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Install GDAL/OGR</h3>
+<p>install the gdal-bin package (this should automatically grab any necessary dependencies, including at least the relevant libgdal version).</p>
+<pre><code class="hljs css language-bash">sudo apt-get install gdal-bin
+</code></pre>
+<p>To verify the installation, you can run <code>ogrinfo --version</code>.</p>
+<pre><code class="hljs css language-bash">ogrinfo --version
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="install-gdal-for-python"></a><a href="#install-gdal-for-python" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Install GDAL for Python</h3>
+<p>Before installing the <a href="https://pypi.org/project/GDAL/">GDAL Python libraries</a>, you’ll need to install the GDAL development libraries.</p>
+<pre><code class="hljs css language-bash">sudo apt-get install libgdal-dev libspatialindex-dev
+</code></pre>
+<blockquote>
+<p>In order to avoid errors of missing requirement when you try to install with pip package-management system, the <a href="https://pypi.org/project/GDAL/">GDAL Python libraries</a> version must coincide with the system installed version.</p>
+</blockquote>
+<h2><a class="anchor" aria-hidden="true" id="multispectral-bands"></a><a href="#multispectral-bands" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Multispectral bands</h2>
+<p><strong>Table Nº 1:</strong> Multispectral band wavelengths available.</p>
+<table>
+<thead>
+<tr><th>Band</th><th>Wavelength</th></tr>
+</thead>
+<tbody>
+<tr><td>Blue</td><td>450 nm</td></tr>
+<tr><td>Green</td><td>560 nm</td></tr>
+<tr><td>Red</td><td>650 nm</td></tr>
+<tr><td>Red Edge</td><td>730 nm</td></tr>
+<tr><td>Near infrared</td><td>840 nm</td></tr>
+</tbody>
+</table>
+<h2><a class="anchor" aria-hidden="true" id="vegetation-index-calculations"></a><a href="#vegetation-index-calculations" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Vegetation index calculations</h2>
+<p>The following spectral index can be generated from these lengths (Table Nº 2).</p>
+<p><strong>Table Nº2:</strong> Spectral index generated from the available wavelengths of camera on board UAV.</p>
+<table>
+<thead>
+<tr><th>Índex</th><th>Equation</th></tr>
+</thead>
+<tbody>
+<tr><td>Normalised Difference Index</td><td>NDVI = ( Rnir- Rr)/(Rnir+Rr)</td></tr>
+<tr><td>Green Normalized Difference Vegetation Index</td><td>GNDVI = (Rnir - Rgreen)/(Rnir + Rgreen)</td></tr>
+<tr><td>Normalised Difference Red Edge</td><td>NDRE = (Rnir - Red edge)/ (Red edge + NIR)</td></tr>
+<tr><td>Leaf Chlorophyll Index</td><td>LCI = (Rnir - Red edge)/(Rnir + Red)</td></tr>
+<tr><td>Optimized Soil Adjusted Vegetation Index</td><td>OSAVI = (Nir-Red)/(Nir+Red+0.16)</td></tr>
+<tr><td>Enhanced Vegetation Index</td><td>EVI = 2.5( Rn- Rr)/ (Rn+ 6<em>Rr)-(7.5</em>Rb + 1)*</td></tr>
+<tr><td>Leaf area index</td><td>LAI = (3.618 x EVI – 0.118) &gt; 0*</td></tr>
+<tr><td>Normalized Difference Water Index</td><td>NDWI = (Rnir - Swir) / (Rnir + Swir)*</td></tr>
+</tbody>
+</table>
+<h2><a class="anchor" aria-hidden="true" id="defining-plant-health-status-labels"></a><a href="#defining-plant-health-status-labels" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Defining plant health status labels</h2>
+<table>
+<thead>
+<tr><th></th><th>NDVI 1</th><th>NDVI 1 &lt; NDVI 2</th></tr>
+</thead>
+<tbody>
+<tr><td>Rank</td><td>Description</td><td>Description</td></tr>
+<tr><td>-1 to 0</td><td>Water, Bare Soils</td><td>Water, Bare Soils</td></tr>
+<tr><td>0 to 0,15</td><td>Soils with sparse, sparse vegetation or crops in the initial stage of development (sprouting)</td><td>Poor vigor, weak plants</td></tr>
+<tr><td>0,15 to 0,30</td><td>Plants in intermediate stage of development (leaf production)</td><td>Bad leaf / flower ratio</td></tr>
+<tr><td>0,30 to 0,45</td><td>Plants in intermediate stage of development (leaf production)</td><td>Bad flower / fruit ratio; fruits with low sugar content, lack of color in the fruits, fruits of low caliber</td></tr>
+<tr><td>0,45 to 0,60</td><td>Plants in the adult stage or phase (fruit production)</td><td>Bad flower / fruit ratio; fruits with low sugar content, lack of color in the fruits, fruits of low caliber</td></tr>
+<tr><td>0,60 to &gt;0,80</td><td>Plants in the adult stage or stage (Fruit maturity)</td><td>Bad flower / fruit ratio; fruits with low sugar content, lack of color in the fruits, fruits of low caliber</td></tr>
+</tbody>
+</table>
+<h2><a class="anchor" aria-hidden="true" id="methodology"></a><a href="#methodology" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Methodology</h2>
+<p>To complete the main objective we consider following diagram methodology (Image Nº1). Was proposed, which reflects the process of generating the information necessary for decision- making during the management of a production cycles of a crop in general.</p>
+<p><img src="/img/Process_Diag.jpg" alt="Process_Diag"></p>
+<p>Several diagrams of sub- processes were also proposed.
+1- To assess the growth status of plants. Image Nº2,  NDVI multi-time series.</p>
+<p><img src="/img/Diagrama2.jpg" alt="Diagrama2"></p>
+<h2><a class="anchor" aria-hidden="true" id="example-of-the-utility"></a><a href="#example-of-the-utility" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example of the utility</h2>
+<p>The geodata underlying the map are generate with <a href="https://www.openstreetmap.org/">OpenStreetMap (OSM)</a></p>
+<p><img src="/img/example_pa.png" alt="Images"></p>
+<h2><a class="anchor" aria-hidden="true" id="example-of-an-output-data"></a><a href="#example-of-an-output-data" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example of an output data</h2>
+<p><strong><em>GeoTIFF georeferencing information</em></strong></p>
+<pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"SourceFile"</span>: <span class="hljs-string">"/tmp/phpdiUnOQ"</span>,
+  <span class="hljs-attr">"ExifTool:ExifToolVersion"</span>: <span class="hljs-number">10.8</span>,
+  <span class="hljs-attr">"System:FileName"</span>: <span class="hljs-string">"phpdiUnOQ"</span>,
+  <span class="hljs-attr">"System:Directory"</span>: <span class="hljs-string">"/tmp"</span>,
+  <span class="hljs-attr">"System:FileSize"</span>: <span class="hljs-number">81173090</span>,
+  <span class="hljs-attr">"System:FileModifyDate"</span>: <span class="hljs-string">"2020:12:07 01:20:48+00:00"</span>,
+  <span class="hljs-attr">"System:FileAccessDate"</span>: <span class="hljs-string">"2020:12:07 01:20:49+00:00"</span>,
+  <span class="hljs-attr">"System:FileInodeChangeDate"</span>: <span class="hljs-string">"2020:12:07 01:20:48+00:00"</span>,
+  <span class="hljs-attr">"System:FilePermissions"</span>: <span class="hljs-number">600</span>,
+  <span class="hljs-attr">"File:FileType"</span>: <span class="hljs-string">"TIFF"</span>,
+  <span class="hljs-attr">"File:FileTypeExtension"</span>: <span class="hljs-string">"TIF"</span>,
+  <span class="hljs-attr">"File:MIMEType"</span>: <span class="hljs-string">"image/tiff"</span>,
+  <span class="hljs-attr">"File:ExifByteOrder"</span>: <span class="hljs-string">"II"</span>,
+  <span class="hljs-attr">"IFD0:ImageWidth"</span>: <span class="hljs-number">5931</span>,
+  <span class="hljs-attr">"IFD0:ImageHeight"</span>: <span class="hljs-number">5526</span>,
+  <span class="hljs-attr">"IFD0:BitsPerSample"</span>: <span class="hljs-number">32</span>,
+  <span class="hljs-attr">"IFD0:Compression"</span>: <span class="hljs-number">5</span>,
+  <span class="hljs-attr">"IFD0:PhotometricInterpretation"</span>: <span class="hljs-number">1</span>,
+  <span class="hljs-attr">"IFD0:SamplesPerPixel"</span>: <span class="hljs-number">1</span>,
+  <span class="hljs-attr">"IFD0:PlanarConfiguration"</span>: <span class="hljs-number">1</span>,
+  <span class="hljs-attr">"IFD0:Predictor"</span>: <span class="hljs-number">1</span>,
+  <span class="hljs-attr">"IFD0:TileWidth"</span>: <span class="hljs-number">256</span>,
+  <span class="hljs-attr">"IFD0:TileLength"</span>: <span class="hljs-number">256</span>,
+  <span class="hljs-attr">"IFD0:TileOffsets"</span>: <span class="hljs-string">"(Binary data 4585 bytes, use -b option to extract)"</span>,
+  <span class="hljs-attr">"IFD0:TileByteCounts"</span>: <span class="hljs-string">"(Binary data 3237 bytes, use -b option to extract)"</span>,
+  <span class="hljs-attr">"IFD0:SampleFormat"</span>: <span class="hljs-number">3</span>,
+  <span class="hljs-attr">"IFD0:PixelScale"</span>: <span class="hljs-string">"5.90674417821901e-07 4.95878410333717e-07 0"</span>,
+  <span class="hljs-attr">"IFD0:ModelTiePoint"</span>: <span class="hljs-string">"0 0 0 -71.4437256820205 -33.3243854159711 0"</span>,
+  <span class="hljs-attr">"IFD0:GDALNoData"</span>: <span class="hljs-string">"nan"</span>,
+  <span class="hljs-attr">"GeoTiff:GeoTiffVersion"</span>: <span class="hljs-string">"1.1.0"</span>,
+  <span class="hljs-attr">"GeoTiff:GTModelType"</span>: <span class="hljs-number">2</span>,
+  <span class="hljs-attr">"GeoTiff:GTRasterType"</span>: <span class="hljs-number">1</span>,
+  <span class="hljs-attr">"GeoTiff:GeographicType"</span>: <span class="hljs-number">4326</span>,
+  <span class="hljs-attr">"GeoTiff:GeogCitation"</span>: <span class="hljs-string">"WGS 84"</span>,
+  <span class="hljs-attr">"GeoTiff:GeogAngularUnits"</span>: <span class="hljs-number">9102</span>,
+  <span class="hljs-attr">"GeoTiff:GeogSemiMajorAxis"</span>: <span class="hljs-number">6378137</span>,
+  <span class="hljs-attr">"GeoTiff:GeogInvFlattening"</span>: <span class="hljs-number">298.257223563</span>,
+  <span class="hljs-attr">"Composite:ImageSize"</span>: <span class="hljs-string">"5931x5526"</span>,
+  <span class="hljs-attr">"Composite:Megapixels"</span>: <span class="hljs-number">32.774706</span>
+}
+</code></pre>
+<p><strong><em>spectral index</em></strong></p>
+<p><img src="/img/veg_index.png" alt="Images"></p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/detection_models"><span class="arrow-prev">← </span><span>Photovoltaic Fault Detector</span></a><a class="docs-next button" href="/docs/deployment"><span>Models Deployment</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#quickstart">Quickstart</a><ul class="toc-headings"><li><a href="#before-you-begin-python-36">Before You Begin: Python 3.6</a></li><li><a href="#install-gdalogr">Install GDAL/OGR</a></li><li><a href="#install-gdal-for-python">Install GDAL for Python</a></li></ul></li><li><a href="#multispectral-bands">Multispectral bands</a></li><li><a href="#vegetation-index-calculations">Vegetation index calculations</a></li><li><a href="#defining-plant-health-status-labels">Defining plant health status labels</a></li><li><a href="#methodology">Methodology</a></li><li><a href="#example-of-the-utility">Example of the utility</a></li><li><a href="#example-of-an-output-data">Example of an output data</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/favicon.ico" alt="Rentadrone.cl" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/en/developers">Getting Started</a></div><div><h5>Community</h5><a href="https://stackoverflow.com/questions/tagged/" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://discordapp.com/">Project Chat</a><a href="https://twitter.com/" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="https://github.com/RentadroneCL">GitHub</a></div></section><section class="copyright">Copyright © 2020 rentadrone.cl</section></footer></div></body></html>
