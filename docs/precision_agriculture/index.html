@@ -139,6 +139,69 @@
 <p><img src="/img/Diagrama2.jpg" alt="Diagrama2"></p>
 <h2><a class="anchor" aria-hidden="true" id="data-preprocessing"></a><a href="#data-preprocessing" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Data Preprocessing</h2>
 <h3><a class="anchor" aria-hidden="true" id="input-generation-to-create-multispectral-orthomosaics"></a><a href="#input-generation-to-create-multispectral-orthomosaics" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Input generation to create multispectral orthomosaics</h3>
+<p>To generate the input of the Precision Agriculture algorithms of <a href="https://rentadrone.cl">Rentadrone.cl</a>., Which are orthomosaic of different multispectral bands, the following steps must be carried out in two well-known Open Source softwares. These are <a href="https://github.com/OpenDroneMap">Open Drone Map</a> and <a href="https://github.com/qgis">QGIS</a>.</p>
+<h4><a class="anchor" aria-hidden="true" id="steps-in-open-drone-map-using-the-webodm-interfacehttpsdocswebodmorgtextwebodm20is20a20free2c20usersoftware20like20qgis20or20autocad"></a><a href="#steps-in-open-drone-map-using-the-webodm-interfacehttpsdocswebodmorgtextwebodm20is20a20free2c20usersoftware20like20qgis20or20autocad" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Steps in Open Drone Map <a href="https://docs.webodm.org/#:~:text=WebODM%20is%20a%20free%2C%20user,software%20like%20QGIS%20or%20AutoCAD.">(using the WebODM interface)</a>:</h4>
+<ul>
+<li><p>Add Project</p>
+<ul>
+<li><p>Set project NAME: “Sector_Name”
+Description: Spectral Channel (Green)
+<img src="/img/spectral_green_channel.png" alt="Spectral Channel (Green)"></p>
+<p>Select Images: to generate the orthomosaic of each channel (Green in this example) it is necessary to select from the dataset only of the images ending in the number corresponding to each channel image. This is number 2 for this example: DJI_0022, DJI_0032, DJI_0032. You can filter using the expression * 2.tif in the corresponding directory window.</p></li>
+</ul></li>
+<li><p>Select Images: to generate the orthomosaic of each channel (Green in this example) it is necessary to select from the dataset only of the images ending in the number corresponding to each channel image. This is number 2 for this example: DJI_0022, DJI_0032, DJI_0032. You can filter using the expression * 2.tif in the corresponding directory window.</p>
+<ul>
+<li>For UAV DJI P4 Multispectral,  he numeric endings of the files per channel are described below:
+<ul>
+<li>DJI_0020.JPG (RGB)</li>
+<li>DJI_0021.TIFF (Blue)</li>
+<li>DJI_0022.TIFF (Green)</li>
+<li>DJI_0023.TIFF (Red)</li>
+<li>DJI_0024.TIFF (RedEdge)</li>
+<li>DJI_0025TIFF (NIR)</li>
+</ul></li>
+</ul></li>
+<li><p>Then, we select all the filtered images and upload to our project.</p>
+<ul>
+<li>In this example we have loaded 172 images to generate the orthophoto that make up the Green channel.
+<img src="/img/file_explorer.png" alt="File explorer"></li>
+</ul>
+<blockquote>
+<p>In &quot;Options&quot; we activate <code>ortophoto-png</code> and we give it save.</p>
+</blockquote>
+<p><img src="/img/ortophoto_png.png" alt="Ortophoto"></p>
+<blockquote>
+<p>Activate <code>Start Processing</code> to generate the orthophoto of the Green channel. This process must be repeated for the generation of each spectral channel.</p>
+</blockquote>
+<p><img src="/img/start_processing.png" alt="Start processing"></p></li>
+<li><p>Extraction of the file already generated in this case a georeferenced orthophoto.</p>
+<ul>
+<li>After completing the process, we display the <code>1 Task</code> and download it in <code>(GeoTiff)</code>.
+<img src="/img/1_task.png" alt="1 Task">
+The resulting file is named <code>odm_orthophoto.tiff</code>, it only remains to rename the file in this case with the termination of the corresponding channel, in this case the image is the Blue channel. <code>odm_orthophoto_(Project)_blue.tiff</code> and take it to the location provided for the project.
+<img src="/img/blue_tiff.png" alt="Blue Tiff"></li>
+</ul></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="steps-in-qgis"></a><a href="#steps-in-qgis" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Steps in QGIS:</h3>
+<p>After generating the RGB orthomosaics and each of the multispectral bands: Red Edge, NIR, Red, Green, Blue, we use <a href="https://github.com/qgis">QGIS</a> for their correct alignment using the Georeferencer tool, for which we have to identify distinguishable elements in both RGB orthomosaic as in each multispectral orthomosaic located on the contour of our area of interest, (example Image a) for greater precision of this process, marks or targets could be placed on the ground.</p>
+<ul>
+<li><p>Control point distribution in RGB orthomosaic
+<img src="/img/control_point.png" alt="Control point"></p></li>
+<li><p>Control point for multispectral band alignment.
+<img src="/img/multispectral_band.png" alt="Multispectral ban"></p></li>
+</ul>
+<p>After identifying the control points in each image we will use QGIS to align the images using the Georeferencer tool shown below.
+<img src="/img/gcp_qgis.png" alt="Gcp qgis"></p>
+<p>Using the Georeferencer we will be able to generate the GCPs in the RGB orthomosaic that we will use as a reference for each multispectral orthomosaic to align it to the RGB.</p>
+<ul>
+<li>step 1. open the RGB orthomosaic from the Georeferencer tool.</li>
+<li>step 2. identify and create the GCPs in RGB</li>
+<li>step 3. save the GCPs in .points format from the options window (image c)</li>
+<li>step 4. Open each multispectral band mosaic from the georeferencer, load the GCPs and adjust to each point separately.</li>
+<li>step 5. save each orthomosaic.</li>
+</ul>
+<p><img src="/img/orthomosaic.png" alt="Orthomosaic"></p>
+<p>Finally, after georeferencing each Orthomosaic, the input data will be ready for the processes of calculation and mapping of vegetation indices using Rentadrone.cl's Precision Agriculture algorithms.</p>
 <h2><a class="anchor" aria-hidden="true" id="example-of-the-utility"></a><a href="#example-of-the-utility" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>example of the utility</h2>
 <p>The geodata underlying the map are generate with <a href="https://www.openstreetmap.org/">OpenStreetMap (OSM)</a></p>
 <p><img src="/img/example_pa.png" alt="Images"></p>
@@ -188,4 +251,4 @@
 </code></pre>
 <p><strong><em>spectral index</em></strong></p>
 <p><img src="/img/veg_index.png" alt="Images"></p>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/detection_models"><span class="arrow-prev">← </span><span>Photovoltaic Fault Detector</span></a><a class="docs-next button" href="/docs/deployment"><span>Models Deployment</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#quickstart">Quickstart</a><ul class="toc-headings"><li><a href="#before-you-begin-python-36">Before You Begin: Python 3.6</a></li><li><a href="#install-gdalogr">Install GDAL/OGR</a></li><li><a href="#install-gdal-for-python">Install GDAL for Python</a></li></ul></li><li><a href="#multispectral-bands">Multispectral bands</a></li><li><a href="#vegetation-index-calculations">Vegetation index calculations</a></li><li><a href="#defining-plant-health-status-labels">Defining plant health status labels</a></li><li><a href="#limitations-of-this-solution">Limitations of this solution</a></li><li><a href="#methodology">Methodology</a></li><li><a href="#data-preprocessing">Data Preprocessing</a><ul class="toc-headings"><li><a href="#input-generation-to-create-multispectral-orthomosaics">Input generation to create multispectral orthomosaics</a></li></ul></li><li><a href="#example-of-the-utility">example of the utility</a></li><li><a href="#example-of-an-output-data">Example of an output data</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/favicon.ico" alt="Rentadrone.cl" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/en/developers">Getting Started</a></div><div><h5>Community</h5><a href="https://stackoverflow.com/questions/tagged/" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://discordapp.com/">Project Chat</a><a href="https://twitter.com/" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="https://github.com/RentadroneCL">GitHub</a></div></section><section class="copyright">Copyright © 2020 rentadrone.cl</section></footer></div></body></html>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/detection_models"><span class="arrow-prev">← </span><span>Photovoltaic Fault Detector</span></a><a class="docs-next button" href="/docs/deployment"><span>Models Deployment</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#quickstart">Quickstart</a><ul class="toc-headings"><li><a href="#before-you-begin-python-36">Before You Begin: Python 3.6</a></li><li><a href="#install-gdalogr">Install GDAL/OGR</a></li><li><a href="#install-gdal-for-python">Install GDAL for Python</a></li></ul></li><li><a href="#multispectral-bands">Multispectral bands</a></li><li><a href="#vegetation-index-calculations">Vegetation index calculations</a></li><li><a href="#defining-plant-health-status-labels">Defining plant health status labels</a></li><li><a href="#limitations-of-this-solution">Limitations of this solution</a></li><li><a href="#methodology">Methodology</a></li><li><a href="#data-preprocessing">Data Preprocessing</a><ul class="toc-headings"><li><a href="#input-generation-to-create-multispectral-orthomosaics">Input generation to create multispectral orthomosaics</a></li><li><a href="#steps-in-qgis">Steps in QGIS:</a></li></ul></li><li><a href="#example-of-the-utility">example of the utility</a></li><li><a href="#example-of-an-output-data">Example of an output data</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/favicon.ico" alt="Rentadrone.cl" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/en/developers">Getting Started</a></div><div><h5>Community</h5><a href="https://stackoverflow.com/questions/tagged/" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://discordapp.com/">Project Chat</a><a href="https://twitter.com/" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="https://github.com/RentadroneCL">GitHub</a></div></section><section class="copyright">Copyright © 2020 rentadrone.cl</section></footer></div></body></html>
